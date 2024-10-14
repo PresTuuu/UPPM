@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="id">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UPPM</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const dropdowns = document.querySelectorAll('.dropdown');
+      dropdowns.forEach(dropdown => {
+        const toggle = dropdown.previousElementSibling;
+        toggle.addEventListener('click', () => {
+          dropdown.classList.toggle('hidden');
+        });
+      });
+
+      const logoutLink = document.getElementById('logout');
+      if (logoutLink) {
+        logoutLink.addEventListener('click', function() {
+          window.location.href = 'index.html';
+        });
+      }
+    });
+  </script>
+ </head>
+ <body class="font-roboto bg-gray-100">
+  <header class="bg-white shadow-lg">
+   <div class="container mx-auto flex items-center justify-between py-4 px-8">
+    <div class="flex items-center">
+     <img alt="UPPM logo" class="h-14 w-14" src="u2.png"/>
+     <span class="ml-4 text-4xl font-bold text-blue-700">UPPM</span>
+    </div>
+    <nav class="flex space-x-4">
+     <a class="text-blue-700 hover:text-blue-900 transition duration-300 text-lg" href="#">Home</a>
+     <div class="relative">
+        <a class="text-blue-700 hover:text-blue-900 transition duration-300 text-lg" href="#">Profil <i class="fas fa-chevron-down"></i></a>
+        <div class="absolute dropdown bg-white shadow-lg mt-1 z-10 hidden w-32 -left-4"> <!-- Mengurangi lebar dropdown -->
+         <a class="block px-4 py-2 text-blue-700 hover:bg-gray-100 transition duration-300" href="#">Submenu 1</a>
+         <a class="block px-4 py-2 text-blue-700 hover:bg-gray-100 transition duration-300" href="#">Submenu 2</a>
+         <a id="logout" class="block px-4 py-2 text-blue-700 hover:bg-gray-100 transition duration-300" href="#">Logout</a>
+        </div>
+      </div>
+     <a class="text-blue-700 hover:text-blue-900 transition duration-300 text-lg" href="#">Penelitian</a>
+     <a class="text-blue-700 hover:text-blue-900 transition duration-300 text-lg" href="#">Abdimas</a>
+     <a class="text-blue-700 hover:text-blue-900 transition duration-300 text-lg" href="#">HaKI</a>
+     <div class="relative">
+      <a class="text-blue-700 hover:text-blue-900 transition duration-300 text-lg" href="#">Informasi <i class="fas fa-chevron-down"></i></a>
+      <div class="absolute dropdown bg-white shadow-lg mt-1 z-10 hidden w-48 -left-4"> <!-- Mengurangi lebar dropdown -->
+       <a class="block px-4 py-2 text-blue-700 hover:bg-gray-100 transition duration-300" href="#">Berita Terbaru</a>
+       <a class="block px-4 py-2 text-blue-700 hover:bg-gray-100 transition duration-300" href="#">Pedoman & Panduan</a>
+      </div>
+     </div>
+     <a class="text-blue-700 hover:text-blue-900 transition duration-300 text-lg" href="#">Luaran</a>
+    </nav>
+   </div>
+  </header>
+  <main>
+   <div class="relative">
+    <img alt="Group of medical students with a model" class="w-full h-auto rounded-lg shadow-md" src="https://storage.googleapis.com/a1aa/image/oFoUYqVUHjI2IxOoEKepM5Zzw0e71kJJqwOEvi5Aug4RTjmTA.jpg"/>
+    <div class="absolute inset-0 bg-black bg-opacity-60 flex flex-col justify-center items-center text-center text-white p-4 rounded-lg">
+     <h1 class="text-4xl font-bold">Our Mission</h1>
+     <p class="text-xl mt-2 italic">"Empowering Health through Research and Community Engagement result."</p>
+     <p class="bg-yellow-300 text-black p-2 mt-4 rounded-lg shadow-md">
+      Pemberdayaan kesehatan melalui pemahaman yang lebih baik tentang masalah kesehatan, pengembangan solusi yang efektif, dan penerapan praktik kesehatan yang berdampak positif pada masyarakat.
+     </p>
+    </div>
+   </div>
+  </main>
+ </body>
+</html>
